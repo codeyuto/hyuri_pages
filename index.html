@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="16x16 24x24 32x32 48x48 64x64" />
+    <title>What's Hyuri</title>
+    <style>
+        body{
+        background-color: #f9fafb;
+    }
+       ul{
+			margin: 60px auto 100px!important;
+			display: flex;
+            list-style: none;
+		}
+ul li{
+	width: calc(100% / 4);
+	height: 350px;
+	padding: 30px 0;
+	transition: .4s;
+    border: 2px solid rgb(216, 216, 216);
+}
+img.icon{
+    width: calc(100%/6);
+    height: calc(100%/6);
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+
+}
+.comment > p{
+    text-align: center;
+    width: 30%;
+    margin: 0 auto;
+}
+.c_header{
+    font-weight: bold;
+
+}
+dt{
+    font-weight: bold;
+}
+/* メニューが開いた時の幅 */
+ul li.open{ width: 460px; }
+/* フェードインする要素を非表示にしておく */
+ul li dl dd{ display: none; }
+    </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    $(function(){
+        $('.menu-list li').on('click',function() {
+            if($(this).hasClass('open')){//クリックしたメニューにopenが付与されていたら
+                $('.menu-list li dd').hide();//中身のテキストをすべて非表示に
+                $('.menu-list li').removeClass('open');//すべてのメニューを閉じる
+            } else {//クリックした要素にopenが付与されていなかったら
+                $('.menu-list li dd').hide();//中身のテキストをすべて非表示に
+                $('.menu-list li').removeClass('open');//すべてのメニューを閉じる
+                $(this).addClass('open');//クリックしたメニューを開く
+                setTimeout(function(){//時間差でテキストをフェードイン
+                    $('.open dd').fadeIn();
+                },400);
+            }
+        });
+    });
+</script>
+</head>
+<body>
+<h1 style="border-bottom: solid 5px rgb(71, 71, 255)">What's Hyuri?</h1>
+<img src="MyIcon.jpeg" alt="My Icon" class="icon">
+<div class="comment">
+<p class="c_header">ひとこと</p>
+<p>よろしくお願いします。</p>
+</div>
+    <ul class="menu-list">
+        <li>
+            <dl>
+                <dt>概要</dt>
+                <dd>ひゅーりです。</br>別所ではしそのは とうふ、戸宮歩、タコスケなどと名乗っています。</br>主に人の書いた文が好きです。</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>所属と研究</dt>
+                <dd>OIT(情報科学研究科) M2 NLP研</dd>
+                <dd>育児支援のためのチャットボット開発</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>Favorite</dt>
+                <dd>人の書いた文、ピングー、花札、オムライス、日記、SNS、BLなどなど</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>Link</dt>
+                <dd><a href="https://hyuri-kyuri.hatenablog.com/">はてなブログ</a></dd>
+                <dd><a href="https://twitter.com/hyuri_sabre">Twitter</a></dd>
+                <dd><a href="https://github.com/codeyuto">Github(しそのは とうふ)</a></dd>
+            </dl>
+        </li>
+    </ul>
+<h2>おまけ</h2>
+<a href="my_interest.html">個人的に気になるもの</a><br>
+<a href="https://www.amazon.jp/hz/wishlist/ls/3H3ZAJLDFOA1W?ref_=wl_share">欲しいものリスト(ください)</a>
+</body>
+</html>
